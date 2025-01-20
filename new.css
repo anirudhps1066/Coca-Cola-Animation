@@ -1,0 +1,398 @@
+
+body{
+    min-height: 100vh;
+    margin: 0;
+    background-color: #CDCDCD;
+    background-image:
+    repeating-linear-gradient(
+        to right, transparent 0 150px, #0001 150px 151px
+    ),
+    repeating-linear-gradient(
+        to bottom, transparent 0 150px, #0001 150px 151px
+    ),
+    linear-gradient(to right, #CDCDCDcc, #CDCDCDcc),
+    url(https://img.freepik.com/free-photo/top-view-ice-cubes-still-life_23-2150408418.jpg?t=st=1737385670~exp=1737389270~hmac=33fb2167219d77817599fc086c4a5b12ed7f73359e9236c84d93b4e63fca3795&w=1380);
+
+}
+nav{
+	position: relative;
+	margin:auto;
+	width: 590px;
+	height: 50px;
+	background: #34495e;
+	border-radius: 8px;
+	font-size: 0;
+	box-shadow: 0 2px 3px 0 rgba(0,0,0,.1);
+}
+nav a{
+	font-size: 15px;
+	text-transform: uppercase;
+	color: white;
+	text-decoration: none;
+	line-height: 50px;
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+	text-align: center;
+}
+nav .animation{
+	position: absolute;
+	height: 100%;
+	top: 0;
+	background: rgba(214, 60, 60, 0.979);
+	border-radius: 8px;
+	transition: all .5s ease 0s;
+}
+nav a:nth-child(1){
+	width: 100px;
+}
+nav .start-home, a:nth-child(1):hover~.animation{
+	width: 100px;
+	left: 0;
+}
+nav a:nth-child(2){
+	width: 110px;
+}
+nav a:nth-child(2):hover~.animation{
+	width: 110px;
+	left: 100px;
+}
+nav a:nth-child(3){
+	width: 100px;
+}
+nav a:nth-child(3):hover~.animation{
+	width: 100px;
+	left: 210px;
+}
+nav a:nth-child(4){
+	width: 160px;
+}
+nav a:nth-child(4):hover~.animation{
+	width: 160px;
+	left: 310px;
+}
+nav a:nth-child(5){
+	width: 120px;
+}
+nav a:nth-child(5):hover~.animation{
+	width: 120px;
+	left: 470px;
+}
+
+.banner{
+    margin-top:300px;
+    overflow:visible;
+    position: relative;
+    height: auto;
+    min-height: 100vh;
+}
+.product{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 170px;
+    z-index: 2;
+    width: 500px;
+    transition: 0.7s;
+    overflow: visible;
+}
+.product .soda{
+    position: absolute;
+    bottom: 0;
+    left: calc(50%);
+    transform: translateX(-50%);
+}
+.soda{
+    --left: 0px;
+    background: 
+        var(--url) var(--left),
+        url(images/mockup.png) 0 0;
+    background-size: auto 100%;
+    width: 280px;
+    aspect-ratio: 2 / 4;
+    background-blend-mode: multiply;
+    transition: 0.8s;
+    mask-image: url(images/mockup.png);
+    mask-size: auto 100%;
+    overflow: visible;
+}
+.soda:nth-child(2){
+    opacity: 0;
+}
+.product:hover{
+    bottom: 300px;
+}
+.product:hover .soda:nth-child(2){
+    opacity: 1;
+    --left: 500px;
+}
+.product:hover .soda:nth-child(1){
+    opacity: 0;
+    --left: 500px;
+}
+
+.rock{
+    position: absolute;
+    inset: 0 0 0 0;
+    width: 100%;
+    pointer-events: none;
+}
+.rock img:nth-child(1){
+    position: absolute;
+    height: 170px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 30px;
+    transition: 0.7s;
+    z-index: 1;
+}
+.rock img:nth-child(2){
+    position: absolute;
+    height: 50%;
+    left: 0;
+    bottom: 0;
+    transition: 0.7s;
+}
+.rock img:nth-child(3){
+    position: absolute;
+    height: 100%;
+    right: 0;
+    bottom: -100px;
+    rotate: -25deg;
+    transition: 0.7s;
+}
+.banner:has(.product:hover) .rock img:nth-child(1){
+    transform: translateX(-50%) translateY(50px);
+}
+.banner:has(.product:hover) .rock img:nth-child(2){
+    transform: translateX(-100px) translateY(100px);
+}
+.banner:has(.product:hover) .rock img:nth-child(3){
+    transform: translateX(100px) translateY(100px);
+}
+.hero{
+    display: flex;
+    width: 300px;
+    height: 300px;
+    flex-wrap: wrap;
+    margin: 270px;
+
+}
+.small-img{
+    flex-basis: 100px;
+    cursor: pointer;
+    position: relative;
+    transition: 2s;
+    box-shadow: 27px 41px 13px 4px rgba(0,0,0,0.2);
+}
+.small-img img{
+    width: 100px;
+}
+.small-img::after{
+    content: "";
+    width: 100px;
+    height: 30px;
+    bottom: -29px;
+    left: 7px;
+    position: absolute;
+    background: #2d5661;
+    transform: skewX(26deg);
+}
+.small-img::before{
+    content: "";
+    width: 15px;
+    height: 100px;
+    right: -14px;
+    top: 15px;
+    position: absolute;
+    background: #3c8898;
+    transform: skewY(65deg);
+}
+.hero:hover .small-img:nth-child(1){
+    transform: translate(60px,230px) rotate(360deg);
+}
+.hero:hover .small-img:nth-child(2){
+    transform: translate(-260px,-150px) rotate(360deg);
+}
+.hero:hover .small-img:nth-child(3){
+    transform: translate(91px,295px) rotate(360deg);
+}
+.hero:hover .small-img:nth-child(4){
+    transform: translate(440px,-220px) rotate(360deg);
+}
+.hero:hover .small-img:nth-child(5){
+    transform: translate(100px,-120px) rotate(360deg);
+}
+.hero:hover .small-img:nth-child(6){
+    transform: translate(-370px,320px) rotate(360deg);
+}
+.hero:hover .small-img:nth-child(7){
+    transform: translate(0px,-480px) rotate(360deg);
+}
+.hero:hover .small-img:nth-child(8){
+    transform: translate(-280px,-40px) rotate(360deg);
+}
+.hero:hover .small-img:nth-child(9){
+    transform: translate(-400px,-150px) rotate(360deg);
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.image {
+    width: 300px;
+    height: 300px;
+    background-size: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-right: 580px;
+}
+
+.text-container {
+    max-width: 600px;
+    text-align: left;
+    margin-top: -1100px;
+    margin-left: -160px;
+}
+
+.text-container h1 {
+    font-size: 68px;
+    margin: 0 0 20px;
+    font-weight: bold;
+}
+
+.text-container p {
+    font-size: 16px;
+    color: #555;
+    font-weight: bold;
+    margin: 0 0 20px;
+}
+.arrow {
+    transform: translateY(-50%);
+    font-size: 40px;
+    margin-top: 50px;
+    color: #333;
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translate(-5px, -50%);
+    }
+    50% {
+        transform: translate(0px, -50%);
+    }
+}
+footer {
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    margin-top: 30px;
+}
+.footer {
+    position: relative;
+    width: 100%;
+    background: #3586ff;
+    min-height: 100px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+  }
+  .menu__item {
+    list-style: none;
+  }
+  
+  .menu__link {
+    font-size: 1.2rem;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+    text-decoration: none;
+    opacity: 0.75;
+    font-weight: 300;
+  }
+  
+  .menu__link:hover {
+    opacity: 1;
+  }
+  
+  .footer p {
+    color: #fff;
+    margin: 15px 0 10px 0;
+    font-size: 1rem;
+    font-weight: 300;
+  }
+  
+  .wave {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url("./new/wave.png");
+    background-size: 1000px 100px;
+  }
+  
+  .wave#wave1 {
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    animation: animateWaves 4s linear infinite;
+  }
+  
+  .wave#wave2 {
+    z-index: 999;
+    opacity: 0.5;
+    bottom: 10px;
+    animation: animate 4s linear infinite !important;
+  }
+  
+  .wave#wave3 {
+    z-index: 1000;
+    opacity: 0.2;
+    bottom: 15px;
+    animation: animateWaves 3s linear infinite;
+  }
+  
+  .wave#wave4 {
+    z-index: 999;
+    opacity: 0.7;
+    bottom: 20px;
+    animation: animate 3s linear infinite;
+  }
+  
+  @keyframes animateWaves {
+    0% {
+      background-position-x: 1000px;
+    }
+    100% {
+      background-positon-x: 0px;
+    }
+  }
+  
+  @keyframes animate {
+    0% {
+      background-position-x: -1000px;
+    }
+    100% {
+      background-positon-x: 0px;
+    }
+  }
+  
+
